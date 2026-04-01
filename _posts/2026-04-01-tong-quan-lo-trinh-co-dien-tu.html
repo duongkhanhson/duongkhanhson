@@ -1,0 +1,512 @@
+---
+title: "Tổng Quan Lộ Trình Học Tập Cơ Điện Tử 4.0 (MechaEdu)"
+categories:
+  - Tutorials
+tags:
+  - Mechatronics
+layout: single
+author_profile: true
+---
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+        /* Custom Styles strictly complementing Tailwind */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8fafc; color: #334155; }
+        
+        /* Chart Container Requirements */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px; /* Base height */
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container { height: 400px; }
+        }
+
+        /* Pure CSS Venn Diagram representation for Mechatronics concept */
+        .venn-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+        }
+        .venn-circle {
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #fff;
+            text-align: center;
+            mix-blend-mode: multiply;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .venn-circle:hover { transform: scale(1.05); }
+        .circle-mech { background-color: rgba(59, 130, 246, 0.8); top: 0; left: 60px; } /* Blue */
+        .circle-elec { background-color: rgba(16, 185, 129, 0.8); bottom: 20px; left: 0; } /* Emerald */
+        .circle-comp { background-color: rgba(245, 158, 11, 0.8); bottom: 20px; right: 0; } /* Amber */
+        .venn-center {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: 900;
+            text-shadow: 1px 1px 2px black;
+            z-index: 10;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        
+        .tab-btn.active {
+            background-color: #2563eb;
+            color: white;
+            border-color: #2563eb;
+        }
+    </style>
+
+**© Bản quyền Người tạo nội dung:** *Thầy Đường Khánh Sơn. MLAB.*
+
+
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold text-blue-700">⚙️ MechaEdu</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#tong-quan" class="text-slate-600 hover:text-blue-600 transition-colors font-medium">Tổng Quan</a>
+                    <a href="#lo-trinh" class="text-slate-600 hover:text-blue-600 transition-colors font-medium">Lộ Trình</a>
+                    <a href="#ky-nang" class="text-slate-600 hover:text-blue-600 transition-colors font-medium">Kỹ Năng</a>
+                    <a href="#cong-cu" class="text-slate-600 hover:text-blue-600 transition-colors font-medium">Công Cụ</a>
+                    <a href="#nghe-nghiep" class="text-slate-600 hover:text-blue-600 transition-colors font-medium">Nghề Nghiệp</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-gradient-to-br from-slate-50 to-blue-50 py-20 border-b border-slate-200">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-slate-800 tracking-tight mb-4">
+                Bản Đồ Năng Lực Ngành <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-emerald-500">Cơ Điện Tử</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-600 mb-8">
+                Phân tích toàn diện lộ trình học tập, công cụ và kỹ năng cốt lõi giúp sinh viên làm chủ công nghệ và sẵn sàng cho kỷ nguyên Công nghiệp 4.0.
+            </p>
+            <a href="#tong-quan" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition shadow-lg hover:shadow-xl">
+                Khám Phá Ngay 👇
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-24">
+
+        <!-- 1. Tổng Quan Ngành -->
+        <section id="tong-quan" class="scroll-mt-20">
+            <div class="mb-8 text-center">
+                <h2 class="text-3xl font-bold text-slate-800 mb-4">1. Cơ Điện Tử Là Gì?</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">Phần này giúp bạn hiểu rõ bản chất cốt lõi của ngành học. Cơ điện tử (Mechatronics) không phải là sự cộng gộp đơn thuần, mà là sự giao thoa mật thiết giữa ba trụ cột công nghệ.</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center justify-between bg-white rounded-2xl shadow-sm border border-slate-100 p-8">
+                <div class="w-full md:w-1/2 mb-8 md:mb-0">
+                    <div class="venn-container">
+                        <div class="venn-circle circle-mech" title="Cơ khí: Cấu trúc, động học">Cơ khí<br>⚙️</div>
+                        <div class="venn-circle circle-elec" title="Điện/Điện tử: Cảm biến, mạch điện">Điện tử<br>⚡</div>
+                        <div class="venn-circle circle-comp" title="Tin học: Phần mềm, thuật toán">Tin học<br>💻</div>
+                        <div class="venn-center text-xl">Cơ Điện Tử</div>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 md:pl-8 space-y-4">
+                    <div class="p-4 bg-blue-50 rounded-lg border-l-4 border-blue-500">
+                        <h3 class="font-bold text-blue-800 text-lg">⚙️ Cơ khí (Mechanics)</h3>
+                        <p class="text-slate-700 text-sm">Thiết kế khung vỏ, bộ truyền động, tính toán động lực học. Là "cơ bắp" và "bộ xương" của hệ thống.</p>
+                    </div>
+                    <div class="p-4 bg-emerald-50 rounded-lg border-l-4 border-emerald-500">
+                        <h3 class="font-bold text-emerald-800 text-lg">⚡ Điện - Điện tử (Electronics)</h3>
+                        <p class="text-slate-700 text-sm">Cảm biến nhận diện môi trường, mạch công suất điều khiển động cơ. Là "hệ thần kinh" truyền dẫn tín hiệu.</p>
+                    </div>
+                    <div class="p-4 bg-amber-50 rounded-lg border-l-4 border-amber-500">
+                        <h3 class="font-bold text-amber-800 text-lg">💻 Tin học & Điều khiển (Computing & Control)</h3>
+                        <p class="text-slate-700 text-sm">Lập trình vi điều khiển, PLC, AI, thuật toán xử lý dữ liệu. Là "bộ não" đưa ra quyết định.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Lộ Trình Học Tập -->
+        <section id="lo-trinh" class="scroll-mt-20">
+            <div class="mb-8 text-center">
+                <h2 class="text-3xl font-bold text-slate-800 mb-4">2. Lộ Trình Học Tập Tối Ưu (4 - 4.5 Năm)</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">Khám phá các cột mốc kiến thức qua từng năm học. Hãy nhấp vào các năm để xem chi tiết môn học và mục tiêu cần đạt.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
+                <!-- Tabs -->
+                <div class="flex flex-wrap border-b border-slate-200 bg-slate-50">
+                    <button class="tab-btn active flex-1 py-4 px-4 text-center font-semibold text-slate-600 border-b-2 border-transparent transition-all" data-target="year1">
+                        Năm 1<br><span class="text-xs font-normal">Đại Cương</span>
+                    </button>
+                    <button class="tab-btn flex-1 py-4 px-4 text-center font-semibold text-slate-600 border-b-2 border-transparent transition-all" data-target="year2">
+                        Năm 2<br><span class="text-xs font-normal">Cơ Sở Ngành</span>
+                    </button>
+                    <button class="tab-btn flex-1 py-4 px-4 text-center font-semibold text-slate-600 border-b-2 border-transparent transition-all" data-target="year3">
+                        Năm 3<br><span class="text-xs font-normal">Chuyên Ngành</span>
+                    </button>
+                    <button class="tab-btn flex-1 py-4 px-4 text-center font-semibold text-slate-600 border-b-2 border-transparent transition-all" data-target="year4">
+                        Năm 4<br><span class="text-xs font-normal">Thực Hành & AI</span>
+                    </button>
+                </div>
+                
+                <!-- Content Area -->
+                <div class="p-6 md:p-10 min-h-[300px]" id="roadmap-content">
+                    <!-- Dynamic content injected via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Kỹ Năng Cốt Lõi (Chart) -->
+        <section id="ky-nang" class="scroll-mt-20">
+            <div class="mb-8 text-center">
+                <h2 class="text-3xl font-bold text-slate-800 mb-4">3. Hồ Sơ Kỹ Năng Kỹ Sư Cơ Điện Tử</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">Ngành học đòi hỏi sự phát triển đa chiều. Biểu đồ Radar dưới đây mô phỏng mức độ yêu cầu lý tưởng của các nhóm kỹ năng đối với một sinh viên xuất sắc khi ra trường.</p>
+            </div>
+
+            <div class="flex flex-col lg:flex-row items-center bg-white rounded-2xl shadow-sm border border-slate-100 p-6">
+                <div class="w-full lg:w-1/2">
+                    <div class="chart-container">
+                        <canvas id="skillRadarChart"></canvas>
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/2 mt-8 lg:mt-0 lg:pl-12">
+                    <h3 class="text-xl font-bold text-slate-800 mb-4">Phân Tích Khung Năng Lực</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-2">▪️</span>
+                            <p><strong class="text-slate-700">Tư duy Hệ thống (System Thinking):</strong> Kỹ năng quan trọng nhất. Khả năng nhìn nhận tổng thể làm sao cơ, điện, phần mềm hoạt động cùng nhau (Điểm: Cao nhất).</p>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-2">▪️</span>
+                            <p><strong class="text-slate-700">Lập trình & Thuật toán:</strong> Ngày càng chiếm tỷ trọng lớn. Sự khác biệt giữa Cơ điện tử và Cơ khí truyền thống nằm ở "bộ não" phần mềm.</p>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-2">▪️</span>
+                            <p><strong class="text-slate-700">Thiết kế Cơ khí & Mạch:</strong> Đòi hỏi sự vững chắc nền tảng, đủ để thiết kế nguyên mẫu và làm việc với các chuyên gia chuyên sâu.</p>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-2">▪️</span>
+                            <p><strong class="text-slate-700">Ngoại ngữ & Tự học:</strong> Công nghệ cập nhật liên tục (tài liệu đa số tiếng Anh). Kỹ năng tự học quyết định sự phát triển dài hạn.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Công Cụ Phần Mềm -->
+        <section id="cong-cu" class="scroll-mt-20">
+            <div class="mb-8 text-center">
+                <h2 class="text-3xl font-bold text-slate-800 mb-4">4. Hệ Sinh Thái Phần Mềm Cần Nắm Vững</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">Công cụ là vũ khí của kỹ sư. Dưới đây là phân loại các phần mềm tiêu chuẩn công nghiệp mà sinh viên cần làm quen theo lộ trình.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition">
+                    <div class="text-4xl mb-4 text-blue-500">📐</div>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">Thiết Kế Cơ Khí (CAD/CAE)</h3>
+                    <p class="text-sm text-slate-600 mb-4">Dùng để vẽ 3D nguyên lý cấu tạo, tính toán độ bền vật liệu.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-slate-100 text-slate-700 text-xs rounded-full font-medium">SolidWorks</span>
+                        <span class="px-2 py-1 bg-slate-100 text-slate-700 text-xs rounded-full font-medium">AutoCAD</span>
+                        <span class="px-2 py-1 bg-slate-100 text-slate-700 text-xs rounded-full font-medium">NX Siemens</span>
+                        <span class="px-2 py-1 bg-slate-100 text-slate-700 text-xs rounded-full font-medium">Ansys (Mô phỏng)</span>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition">
+                    <div class="text-4xl mb-4 text-emerald-500">🔌</div>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">Thiết Kế Mạch Điện (EDA)</h3>
+                    <p class="text-sm text-slate-600 mb-4">Vẽ sơ đồ nguyên lý, thiết kế mạch in (PCB) cho hệ thống.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-slate-100 text-slate-700 text-xs rounded-full font-medium">Altium Designer</span>
+                        <span class="px-2 py-1 bg-slate-100 text-slate-700 text-xs rounded-full font-medium">Proteus</span>
+                        <span class="px-2 py-1 bg-slate-100 text-slate-700 text-xs rounded-full font-medium">Eagle</span>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition">
+                    <div class="text-4xl mb-4 text-amber-500">💻</div>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">Lập Trình & Vi Điều Khiển</h3>
+                    <p class="text-sm text-slate-600 mb-4">Viết "não bộ" cho robot, hệ thống nhúng.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-slate-100 text-slate-700 text-xs rounded-full font-medium">C/C++</span>
+                        <span class="px-2 py-1 bg-slate-100 text-slate-700 text-xs rounded-full font-medium">Python</span>
+                        <span class="px-2 py-1 bg-slate-100 text-slate-700 text-xs rounded-full font-medium">Keil C</span>
+                        <span class="px-2 py-1 bg-slate-100 text-slate-700 text-xs rounded-full font-medium">Arduino IDE</span>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition">
+                    <div class="text-4xl mb-4 text-purple-500">🎛️</div>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">Điều Khiển Tự Động (PLC)</h3>
+                    <p class="text-sm text-slate-600 mb-4">Lập trình máy móc công nghiệp trong dây chuyền sản xuất.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-slate-100 text-slate-700 text-xs rounded-full font-medium">TIA Portal (Siemens)</span>
+                        <span class="px-2 py-1 bg-slate-100 text-slate-700 text-xs rounded-full font-medium">CX-Programmer</span>
+                        <span class="px-2 py-1 bg-slate-100 text-slate-700 text-xs rounded-full font-medium">GX Works</span>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition md:col-span-2 lg:col-span-2">
+                    <div class="text-4xl mb-4 text-rose-500">🤖</div>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">Hệ Thống Phức Hợp & Robot (Advanced)</h3>
+                    <p class="text-sm text-slate-600 mb-4">Công cụ cấp cao tích hợp Toán, Lý, Lập trình để mô phỏng và phát triển AI cho Robot, xe tự lái.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-slate-100 text-slate-700 text-xs rounded-full font-medium">MATLAB & Simulink</span>
+                        <span class="px-2 py-1 bg-slate-100 text-slate-700 text-xs rounded-full font-medium">ROS (Robot Operating System)</span>
+                        <span class="px-2 py-1 bg-slate-100 text-slate-700 text-xs rounded-full font-medium">LabVIEW</span>
+                        <span class="px-2 py-1 bg-slate-100 text-slate-700 text-xs rounded-full font-medium">OpenCV (Thị giác máy tính)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Cơ Hội Nghề Nghiệp -->
+        <section id="nghe-nghiep" class="scroll-mt-20">
+            <div class="mb-8 text-center">
+                <h2 class="text-3xl font-bold text-slate-800 mb-4">5. Chân Dung Nghề Nghiệp Đa Dạng</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">Nhờ nền tảng đa ngành, kỹ sư Cơ điện tử có thể linh hoạt chuyển đổi giữa nhiều vị trí trong thời đại cách mạng công nghiệp.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="flex items-start p-6 bg-white rounded-xl shadow-sm border border-slate-100 border-l-4 border-l-blue-500 hover:shadow-md transition">
+                    <div class="text-3xl mr-4">🏗️</div>
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-800">Kỹ Sư Thiết Kế Hệ Thống (R&D)</h3>
+                        <p class="text-slate-600 text-sm mt-2">Nghiên cứu và thiết kế các sản phẩm thông minh mới (smart home, thiết bị y tế, drone). Yêu cầu tư duy hệ thống cao.</p>
+                    </div>
+                </div>
+                <div class="flex items-start p-6 bg-white rounded-xl shadow-sm border border-slate-100 border-l-4 border-l-emerald-500 hover:shadow-md transition">
+                    <div class="text-3xl mr-4">⚙️</div>
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-800">Kỹ Sư Tự Động Hóa & PLC</h3>
+                        <p class="text-slate-600 text-sm mt-2">Làm việc trong các nhà máy (FDI, sản xuất ô tô, linh kiện). Lập trình PLC, SCADA điều khiển dây chuyền sản xuất tự động.</p>
+                    </div>
+                </div>
+                <div class="flex items-start p-6 bg-white rounded-xl shadow-sm border border-slate-100 border-l-4 border-l-amber-500 hover:shadow-md transition">
+                    <div class="text-3xl mr-4">🦾</div>
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-800">Kỹ Sư Lập Trình Robot (Robotics)</h3>
+                        <p class="text-slate-600 text-sm mt-2">Phát triển phần mềm cho cánh tay robot công nghiệp, robot tự hành (AGV/AMR) trong kho bãi (Logistics).</p>
+                    </div>
+                </div>
+                <div class="flex items-start p-6 bg-white rounded-xl shadow-sm border border-slate-100 border-l-4 border-l-purple-500 hover:shadow-md transition">
+                    <div class="text-3xl mr-4">🔧</div>
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-800">Kỹ Sư Bảo Trì & Vận Hành Hệ Thống</h3>
+                        <p class="text-slate-600 text-sm mt-2">Đảm bảo các hệ thống máy móc phức tạp hoạt động trơn tru. Có khả năng chẩn đoán lỗi ở cả phần cơ, phần điện và phần mềm.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-8 text-center">
+        <div class="max-w-6xl mx-auto px-4">
+            <p class="mb-2">Biên soạn dựa trên tài liệu hướng dẫn và chương trình đào tạo chuẩn khối kỹ thuật.</p>
+            <p class="text-sm">Mục tiêu: Cung cấp góc nhìn thực tế và lộ trình hiệu quả cho sinh viên Cơ điện tử.</p>
+        </div>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- 1. Roadmap Interactive Logic ---
+            const roadmapData = {
+                year1: {
+                    title: "Năm 1: Xây dựng Nền tảng Khoa học Cơ bản",
+                    focus: "Đại số, Giải tích, Vật lý đại cương, Nhập môn ngành.",
+                    desc: "Giai đoạn này giúp bạn có tư duy logic toán học và hiểu các hiện tượng vật lý - nền tảng để tính toán lực, dòng điện sau này.",
+                    skills: ["Tư duy logic", "Giải quyết vấn đề bằng Toán học", "Kỹ năng lập trình cơ bản (C/C++)"],
+                    tips: "Đừng coi nhẹ Toán và Lý. Hãy bắt đầu làm quen với lập trình C càng sớm càng tốt vì nó là ngôn ngữ 'mẹ' của phần cứng."
+                },
+                year2: {
+                    title: "Năm 2: Kiến thức Cơ sở Ngành (Cơ & Điện)",
+                    focus: "Cơ lý thuyết, Sức bền vật liệu, Mạch điện, Kỹ thuật số, Vẽ kỹ thuật.",
+                    desc: "Bắt đầu 'chạm' vào chuyên ngành. Bạn sẽ học cách một khung sắt chịu lực ra sao và một mạch điện tử xử lý tín hiệu 0-1 như thế nào.",
+                    skills: ["Sử dụng phần mềm CAD 2D/3D", "Phân tích mạch điện tử", "Kỹ năng thực hành xưởng cơ bản"],
+                    tips: "Nên tham gia các câu lạc bộ (CLB Robot, CLB Chế tạo) để áp dụng lý thuyết vào việc hàn mạch, cắt gọt cơ khí thực tế."
+                },
+                year3: {
+                    title: "Năm 3: Chuyên ngành hẹp & Lập trình Nhúng",
+                    focus: "Vi điều khiển, Hệ thống điều khiển tự động, Cảm biến, Kỹ thuật Robot.",
+                    desc: "Giai đoạn 'kết dính' Cơ và Điện bằng Tin học. Bạn học cách lập trình chip (Vi điều khiển) để đọc tín hiệu cảm biến và điều khiển động cơ.",
+                    skills: ["Lập trình vi điều khiển (Arduino, STM32)", "Lập trình PLC", "Thiết kế mạch in (Altium)"],
+                    tips: "Hãy tự làm các mini-project (ví dụ: thùng rác tự mở, xe dò line). Đừng chỉ học chay trên lớp."
+                },
+                year4: {
+                    title: "Năm 4: Hệ thống Phức hợp, AI & Thực tập",
+                    focus: "Thị giác máy (Computer Vision), AI trong công nghiệp, Đồ án tốt nghiệp.",
+                    desc: "Đưa hệ thống lên một tầm cao mới - biến máy móc thành 'hệ thống thông minh' có thể tự nhìn nhận và quyết định.",
+                    skills: ["Lập trình Python, ROS", "Tích hợp hệ thống lớn", "Kỹ năng làm việc nhóm, viết báo cáo Kỹ thuật"],
+                    tips: "Đồ án tốt nghiệp nên giải quyết một bài toán thực tế. Chủ động tìm kiếm vị trí thực tập tại các doanh nghiệp từ học kỳ 1."
+                }
+            };
+
+            const contentArea = document.getElementById('roadmap-content');
+            const tabBtns = document.querySelectorAll('.tab-btn');
+
+            function renderRoadmapDetail(yearKey) {
+                const data = roadmapData[yearKey];
+                contentArea.innerHTML = `
+                    <div class="animate-[fadeIn_0.3s_ease-in-out]">
+                        <h3 class="text-2xl font-bold text-blue-700 mb-3">${data.title}</h3>
+                        <p class="text-slate-800 font-medium mb-4"><strong>Trọng tâm:</strong> ${data.focus}</p>
+                        <p class="text-slate-600 mb-6 leading-relaxed">${data.desc}</p>
+                        
+                        <div class="grid md:grid-cols-2 gap-6 mb-4">
+                            <div class="bg-blue-50 p-4 rounded-lg border border-blue-100">
+                                <h4 class="font-bold text-slate-800 mb-2 flex items-center">🎯 Kỹ năng cần đạt:</h4>
+                                <ul class="list-disc list-inside text-sm text-slate-700 space-y-1">
+                                    ${data.skills.map(s => `<li>${s}</li>`).join('')}
+                                </ul>
+                            </div>
+                            <div class="bg-amber-50 p-4 rounded-lg border border-amber-100">
+                                <h4 class="font-bold text-slate-800 mb-2 flex items-center">💡 Lời khuyên vàng:</h4>
+                                <p class="text-sm text-slate-700 italic">"${data.tips}"</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            // Init first tab
+            renderRoadmapDetail('year1');
+
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    // Remove active class from all
+                    tabBtns.forEach(b => {
+                        b.classList.remove('active', 'bg-blue-600', 'text-white');
+                        b.classList.add('bg-slate-50', 'text-slate-600');
+                    });
+                    
+                    // Add active class to clicked
+                    const target = e.currentTarget;
+                    target.classList.add('active');
+                    target.classList.remove('bg-slate-50', 'text-slate-600');
+                    
+                    // Render content
+                    const year = target.getAttribute('data-target');
+                    renderRoadmapDetail(year);
+                });
+            });
+
+            // Add simple fade in animation style dynamically
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes fadeIn {
+                    from { opacity: 0; transform: translateY(10px); }
+                    to { opacity: 1; transform: translateY(0); }
+                }
+            `;
+            document.head.appendChild(style);
+
+
+            // --- 2. Chart.js Skill Radar Chart ---
+            const ctx = document.getElementById('skillRadarChart').getContext('2d');
+            
+            // Cấu hình Chart.js tuân thủ yêu cầu responsive và design
+            new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: [
+                        'Tư duy Hệ thống', 
+                        'Thiết kế Cơ khí (CAD)', 
+                        'Điện - Điện tử (Mạch)', 
+                        'Lập trình (C/Python)', 
+                        'Điều khiển (PLC/PID)', 
+                        'Kỹ năng mềm (Ngoại ngữ, Teamwork)'
+                    ],
+                    datasets: [{
+                        label: 'Mức độ yêu cầu (Sinh viên xuất sắc)',
+                        data: [95, 75, 80, 85, 85, 90],
+                        backgroundColor: 'rgba(59, 130, 246, 0.2)', // Blue
+                        borderColor: 'rgba(59, 130, 246, 1)',
+                        pointBackgroundColor: 'rgba(59, 130, 246, 1)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgba(59, 130, 246, 1)',
+                        borderWidth: 2,
+                    },
+                    {
+                        label: 'Mức độ Trung bình (Sinh viên mới ra trường)',
+                        data: [70, 65, 60, 60, 65, 70],
+                        backgroundColor: 'rgba(148, 163, 184, 0.2)', // Slate
+                        borderColor: 'rgba(148, 163, 184, 1)',
+                        borderWidth: 1,
+                        borderDash: [5, 5]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false, // Bắt buộc để thẻ div cha kiểm soát kích thước
+                    scales: {
+                        r: {
+                            angleLines: { color: 'rgba(0,0,0,0.1)' },
+                            grid: { color: 'rgba(0,0,0,0.05)' },
+                            pointLabels: {
+                                font: { family: "'Segoe UI', sans-serif", size: 12 },
+                                color: '#475569',
+                                // Wrapper label nếu quá dài (logic yêu cầu)
+                                callback: function(value) {
+                                    if (value.length > 16) {
+                                        return value.match(/.{1,16}(\s|$)/g); // Chia dòng cơ bản
+                                    }
+                                    return value;
+                                }
+                            },
+                            ticks: { min: 0, max: 100, stepSize: 20, display: false }
+                        }
+                    },
+                    plugins: {
+                        legend: { position: 'bottom', labels: { font: { family: "'Segoe UI', sans-serif" } } },
+                        tooltip: {
+                            backgroundColor: 'rgba(15, 23, 42, 0.9)',
+                            titleFont: { family: "'Segoe UI', sans-serif", size: 14 },
+                            bodyFont: { family: "'Segoe UI', sans-serif", size: 13 },
+                            padding: 10,
+                            callbacks: {
+                                label: function(context) {
+                                    return context.dataset.label + ': ' + context.raw + '%';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
