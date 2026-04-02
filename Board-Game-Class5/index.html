@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Board Game – Cờ hỏi đáp lớp 5</title>
+<style>
+  body {font-family: 'Segoe UI', Tahoma, sans-serif; background:#f5fbff; display:flex; flex-direction:column; align-items:center; padding:2rem;}
+  h1 {color:#0044aa;}
+  #board {display:grid; grid-template-columns: repeat(10, 40px); gap:4px; margin:1rem 0;}
+  .cell {width:40px; height:40px; border:2px solid #888; border-radius:4px; display:flex; align-items:center; justify-content:center; background:#e0f7ff;}
+  .token {width:30px; height:30px; background:#ff6600; border-radius:50%;}
+  #msg {margin-top:1rem; font-weight:bold;}
+  button {padding:0.6rem 1.2rem; font-size:1rem; cursor:pointer; background:#4caf50; color:#fff; border:none; border-radius:4px;}
+  button:hover {background:#45a049;}
+</style>
+</head>
+<body>
+<h1>Board Game – Cờ hỏi đáp lớp 5</h1>
+<div id="board"></div>
+<button id="rollBtn">Lăn xúc xắc &amp; trả lời</button>
+<div id="msg"></div>
+<script>
+const boardSize = 10; // number of cells
+const boardEl = document.getElementById('board');
+let position = 0; // start at cell 0
+let tokenEl = null;
+
+function initBoard(){
+  for(let i=0;i<boardSize;i++){
+    const cell = document.createElement('div');
+    cell.className = 'cell';
+    cell.dataset.index = i;
+    boardEl.appendChild(cell);
+  }
+  tokenEl = document.createElement('div');
+  tokenEl.className = 'token';
+  boardEl.children[0].appendChild(tokenEl);
+}
+
+function moveToken(newPos){
+  // remove from old cell
+  const oldCell = boardEl.children[position];
+  if(oldCell.contains(tokenEl)) oldCell.removeChild(tokenEl);
+  // clamp
+  position = Math.max(0, Math.min(boardSize-1, newPos));
+  const newCell = boardEl.children[position];
+  newCell.appendChild(tokenEl);
+}
+
+function askQuestion(){
+  const a = Math.floor(Math.random()*9)+1;
+  const b = Math.floor(Math.random()*9)+1;
+  const correct = a*b;
+  const answer = prompt(`${a} × ${b} = ?`);
+  if(answer===null) return; // cancelled
+  if(parseInt(answer,10)===correct){
+    moveToken(position+1);
+    showMsg('Đúng! Tiến một bước.');
+  } else {
+    moveToken(position-1);
+    showMsg(`Sai! Đáp án đúng là ${correct}. Lùi một bước.`);
+  }
+  if(position===boardSize-1){
+    showMsg('🎉 Bạn đã đến đích! Chúc mừng!');
+    document.getElementById('rollBtn').disabled = true;
+  }
+}
+
+function showMsg(text){
+  document.getElementById('msg').textContent = text;
+}
+
+document.getElementById('rollBtn').addEventListener('click', askQuestion);
+initBoard();
+</script>
+</body>
+</html>
