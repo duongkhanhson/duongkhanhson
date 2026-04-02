@@ -1,11 +1,15 @@
 ---
-title: "Hướng Dẫn & Kiến Thức Học Thuật (Tutorials)"
+title: "Hướng Dẫn & Knowledge (Tutorials)"
 permalink: /tutorials/
 layout: single
 author_profile: true
 ---
 
+<!-- Vietnamese -->
 Chào mừng đến với danh mục Hướng dẫn & Phân tích chuyên sâu về lộ trình Kỹ thuật Cơ điện tử 4.0.
+
+<!-- English -->
+Welcome to the Tutorials section, featuring in‑depth guides and analyses on the Mechatronics 4.0 curriculum.
 
 <div class="entries-list">
   {% for post in site.categories.Tutorials %}
