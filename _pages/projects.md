@@ -7,21 +7,31 @@ layout: single
 <h2>Tiếng Việt</h2>
 Chào mừng đến với danh mục các dự án nghiên cứu và phát triển phần mềm của tôi tại Trường Đại học Kỹ thuật - Công nghệ Cần Thơ.
 
-## [1. Board Game – Cờ hỏi đáp lớp 5](https://duongkhanhson.github.io/Board-Game-Class5/)
+## [1. Hiệp Sĩ Toán Học - Game Nhập Vai Lớp 5](https://duongkhanhson.github.io/Math-Knight-Game/)
+**Công nghệ:** HTML5, Tailwind CSS, Vanilla JavaScript
+
+Dự án này là một trò chơi nhập vai (RPG) tương tác giúp học sinh lớp 5 ôn luyện kiến thức Toán học một cách thú vị. Người chơi vào vai một Hiệp sĩ chiến đấu với quái vật bằng cách giải các bài toán thuộc chương trình lớp 5 như số thập phân, phần trăm, diện tích hình thang và tìm X.
+
+- **Tích hợp Bảng Nháp:** Điểm đặc biệt là tích hợp sẵn bảng vẽ nháp (Scratchpad) ngay trên giao diện để học sinh thực hiện phép tính trước khi chọn đáp án.
+- **Học thông qua Game (Gamification):** Hệ thống HP (Máu) của Hiệp sĩ và Quái vật tạo áp lực tích cực, giúp tăng sự tập trung và phản xạ giải toán.
+- **Đa dạng Kiến thức:** Câu hỏi được sinh ngẫu nhiên với nhiều dạng toán quan trọng của lớp 5.
+
+🎮 *CHƠI THỬ TRUY CẬP NGAY:* **[Live Web Demo Game](https://duongkhanhson.github.io/Math-Knight-Game/)**  
+📄 *Chi tiết mã nguồn:* [Thư mục Source Code Math-Knight-Game](https://github.com/duongkhanhson/duongkhanhson.github.io/tree/master/Math-Knight-Game)
+
+---
+
+## [2. Board Game – Cờ hỏi đáp lớp 5](https://duongkhanhson.github.io/Board-Game-Class5/)
 **Công nghệ:** HTML5, CSS3, Vanilla JavaScript
 
-Dự án này là một trò chơi tương tác ngay trên trình duyệt web, được thiết kế dưới dạng bàn cờ (Board Game) để giúp học sinh lớp 5 luyện tập kiến thức. Mỗi khi di chuyển, người chơi sẽ nhận được một câu hỏi ngẫu nhiên. Trả lời đúng để tiến lên, trả lời sai sẽ bị lùi lại một bước, tạo sự hứng thú và kích thích tư duy.
-
-- **Kích thích Tư duy Phản xạ:** Các câu hỏi toán học/kiến thức được lồng ghép sinh động, yêu cầu phản hồi nhanh để về đích.
-- **Không dùng Thư viện Ngoại:** Toàn bộ engine và logic được xây dựng bằng JavaScript thuần, tối ưu hóa tốc độ tải.
-- **Trải nghiệm ngay trên Web:** Bạn có thể chơi ngay lập tức mà không cần cài đặt.
+Dự án này là một trò chơi tương tác ngay trên trình duyệt web, được thiết kế dưới dạng bàn cờ (Board Game) để giúp học sinh lớp 5 luyện tập kiến thức. Mỗi khi di chuyển, người chơi sẽ nhận được một câu hỏi ngẫu nhiên. Trả lời đúng để tiến lên, trả lời sai sẽ bị lùi lại một bước.
 
 🎮 *CHƠI THỬ TRUY CẬP NGAY:* **[Live Web Demo Game](https://duongkhanhson.github.io/Board-Game-Class5/)**  
 📄 *Chi tiết mã nguồn:* [Thư mục Source Code Board-Game-Class5](https://github.com/duongkhanhson/duongkhanhson.github.io/tree/master/Board-Game-Class5)
 
 ---
 
-## [2. Game Toán lớp 5 – Phép nhân nhanh](https://duongkhanhson.github.io/Math-Game-Class5/)
+## [3. Game Toán lớp 5 – Phép nhân nhanh](https://duongkhanhson.github.io/Math-Game-Class5/)
 **Công nghệ:** HTML5, CSS3, Vanilla JavaScript
 
 Một trò chơi nhỏ giúp các em luyện tập bảng cửu chương thông qua các thử thách tính toán nhanh trong thời hạn 10 câu hỏi.
@@ -31,48 +41,36 @@ Một trò chơi nhỏ giúp các em luyện tập bảng cửu chương thông 
 
 ---
 
-## [3. AI Hand Tracking & Finger Counting](https://github.com/duongkhanhson/duongkhanhson.github.io/tree/master/AI-Hand-Tracking)
+## [4. AI Hand Tracking & Finger Counting](https://github.com/duongkhanhson/duongkhanhson.github.io/tree/master/AI-Hand-Tracking)
 **Công nghệ:** Python, OpenCV, MediaPipe, CustomTkinter
 
 Dự án này là một ứng dụng tự động nhận diện bàn tay và đếm số ngón tay trực tiếp qua hình ảnh từ Webcam. Ứng dụng ứng dụng trí tuệ nhân tạo thông qua công nghệ Computer Vision (OpenCV) và deep learning (MediaPipe) để phát hiện đến 2 bàn tay đồng thời.
-
-- **Cơ chế Thuật toán:** Xây dựng logic đếm ngón tay dựa trên việc trích xuất và tính toán ma trận tọa độ không gian 3D của 21 khớp (Landmarks) trên thời gian thực.
-- **Giao diện hiện đại (HCI):** Được tinh chỉnh với framework `CustomTkinter` cho trải nghiệm Dark Mode mượt mà, điều khiển thân thiện.
-- **Tính ứng dụng:** Là nền tảng cốt lõi được tác giả nghiên cứu phục vụ điều khiển tay máy SCARA (Robotics) từ xa bằng cử chỉ.
 
 📄 *Chi tiết mã nguồn:* [Thư mục Source Code AI-Hand-Tracking](https://github.com/duongkhanhson/duongkhanhson.github.io/tree/master/AI-Hand-Tracking)
 
 ---
 
-## [4. Game Rắn Săn Mồi - Luyện Phép Nhân](https://github.com/duongkhanhson/duongkhanhson.github.io/tree/master/Snake-Math-Game)
+## [5. Game Rắn Săn Mồi - Luyện Phép Nhân](https://github.com/duongkhanhson/duongkhanhson.github.io/tree/master/Snake-Math-Game)
 **Công nghệ:** HTML5 Canvas, CSS3, Vanilla JavaScript
 
-Dự án này là một trò chơi tương tác ngay trên trình duyệt web, được thiết kế nhằm giúp học sinh tiểu học luyện tập các phép toán cửu chương một cách vui nhộn. Trò chơi kết hợp cơ chế Snake cổ điển với việc giải toán nhanh.
-
-- **Kích thích Tư duy Phản xạ:** Thay vì thức ăn thông thường, rắn phải đi tìm và ăn "kết quả đúng" của phép nhân hiển thị ngẫu nhiên trên màn hình.
-- **Không có Thư viện Ngoại:** Toàn bộ engine Game Loop và vẽ đồ họa Canvas được phát triển bằng cấu trúc thuần Vanilla JavaScript.
-- **Trải nghiệm ngay trên Web:** Bạn có thể chơi ngay lập tức mà không cần cài đặt.
+Trò chơi kết hợp cơ chế Snake cổ điển với việc giải toán nhanh giúp học sinh tiểu học luyện tập các phép toán cửu chương.
 
 🎮 *CHƠI THỬ TRUY CẬP NGAY:* **[Live Web Demo Game](https://duongkhanhson.github.io/Snake-Math-Game/)**  
 📄 *Chi tiết mã nguồn:* [Thư mục Source Code Snake-Math-Game](https://github.com/duongkhanhson/duongkhanhson.github.io/tree/master/Snake-Math-Game)
 
 ---
 
-## [5. Hệ thống Camera ESP32 & Theo dõi khuôn mặt](https://github.com/duongkhanhson/duongkhanhson.github.io/tree/master/ESP32-Cam-Face-Tracking)
+## [6. Hệ thống Camera ESP32 & Theo dõi khuôn mặt](https://github.com/duongkhanhson/duongkhanhson.github.io/tree/master/ESP32-Cam-Face-Tracking)
 **Công nghệ:** Python, OpenCV, ESP32-CAM, Tkinter
 
-Dự án tích hợp module phần cứng ESP32-CAM và máy trạm Python để thực hiện nhận diện và theo dõi khuôn mặt hoàn toàn không dây qua TCP/IP Streaming.
-
-📄 *Chi tiết:* [Thư mục ESP32-Cam-Face-Tracking](https://github.com/duongkhanhson/duongkhanhson.github.io/tree/master/ESP32-Cam-Face-Tracking)
+Nhận diện và theo dõi khuôn mặt hoàn toàn không dây qua TCP/IP Streaming tích hợp module phần cứng ESP32-CAM.
 
 ---
 
-## [6. Giao diện điều khiển động cơ PID qua Serial](https://github.com/duongkhanhson/duongkhanhson.github.io/tree/master/PID-Motor-Control)
+## [7. Giao diện điều khiển động cơ PID qua Serial](https://github.com/duongkhanhson/duongkhanhson.github.io/tree/master/PID-Motor-Control)
 **Công nghệ:** Python, Arduino C++, Control Theory
 
-Xây dựng hệ thống giao diện tinh chỉnh thuật toán điều khiển tự động PID qua cổng Serial, dùng cho Motor DC có Encoder.
-
-📄 *Chi tiết:* [Thư mục PID-Motor-Control](https://github.com/duongkhanhson/duongkhanhson.github.io/tree/master/PID-Motor-Control)
+Giao diện tinh chỉnh thuật toán điều khiển tự động PID qua cổng Serial cho Motor DC có Encoder.
 
 ---
 
@@ -81,21 +79,31 @@ Xây dựng hệ thống giao diện tinh chỉnh thuật toán điều khiển 
 <h2>English</h2>
 Welcome to the Projects section, showcasing my research and software development work at Can Tho University of Technology - Engineering.
 
-## [1. Board Game – 5th Grade Quiz](https://duongkhanhson.github.io/Board-Game-Class5/)
+## [1. Math Knight - 5th Grade RPG Game](https://duongkhanhson.github.io/Math-Knight-Game/)
+**Technologies:** HTML5, Tailwind CSS, Vanilla JavaScript
+
+An interactive role-playing game (RPG) designed to help 5th-grade students practice math in an engaging way. Players take on the role of a Knight fighting monsters by solving 5th-grade math problems, including decimals, percentages, geometry, and equations.
+
+- **Integrated Scratchpad:** Features a built-in drawing board for students to perform manual calculations before selecting an answer.
+- **Gamified Learning:** The HP (Health Points) system for the Knight and Monsters provides positive pressure, enhancing focus and math reflexes.
+- **Randomized Curriculum:** Questions are randomly generated covering key 5th-grade math topics.
+
+🎮 *Live Demo:* **[Play Now](https://duongkhanhson.github.io/Math-Knight-Game/)**  
+📄 *Source Code:* [Math-Knight-Game Repo](https://github.com/duongkhanhson/duongkhanhson.github.io/tree/master/Math-Knight-Game)
+
+---
+
+## [2. Board Game – 5th Grade Quiz](https://duongkhanhson.github.io/Board-Game-Class5/)
 **Technologies:** HTML5, CSS3, Vanilla JavaScript
 
-An interactive board game designed for 5th-grade students to practice their knowledge. Players move across the board by answering quiz questions correctly. Correct answers move you forward, while mistakes send you back one step, making learning fun and engaging.
-
-- **Interactive Learning:** Quiz questions are integrated into the gameplay to promote quick thinking and knowledge retention.
-- **No External Libraries:** Built with pure JavaScript for fast performance and seamless integration.
-- **Instant Play:** No installation required; directly playable from the browser.
+An interactive board game designed for 5th-grade students to practice their knowledge. Players move across the board by answering quiz questions correctly.
 
 🎮 *Live Demo:* **[Play Now](https://duongkhanhson.github.io/Board-Game-Class5/)**  
 📄 *Source Code:* [Board-Game-Class5 Repo](https://github.com/duongkhanhson/duongkhanhson.github.io/tree/master/Board-Game-Class5)
 
 ---
 
-## [2. Math Game – Multiplication Trainer](https://duongkhanhson.github.io/Math-Game-Class5/)
+## [3. Math Game – Multiplication Trainer](https://duongkhanhson.github.io/Math-Game-Class5/)
 **Technologies:** HTML5, CSS3, Vanilla JavaScript
 
 A mini-game where students practice multiplication tables through fast calculation challenges within 10 questions.
@@ -105,48 +113,22 @@ A mini-game where students practice multiplication tables through fast calculati
 
 ---
 
-## [3. AI Hand Tracking & Finger Counting](https://github.com/duongkhanhson/duongkhanhson.github.io/tree/master/AI-Hand-Tracking)
+## [4. AI Hand Tracking & Finger Counting](https://github.com/duongkhanhson/duongkhanhson.github.io/tree/master/AI-Hand-Tracking)
 **Technologies:** Python, OpenCV, MediaPipe, CustomTkinter
 
-This project is an automatic hand detection and finger counting application using webcam images. It leverages AI via Computer Vision (OpenCV) and deep learning (MediaPipe) to detect up to two hands simultaneously.
-
-- **Algorithmic Logic:** Finger counting is based on extracting and calculating the 3D spatial matrix of 21 landmarks in real-time.
-- **Modern Interface (HCI):** Refined with the `CustomTkinter` framework for a smooth Dark Mode experience and user-friendly controls.
-- **Application:** Serves as a core research platform for remote gesture-based control of SCARA robot arms.
+This project is an automatic hand detection and finger counting application using webcam images. It leverages AI via Computer Vision (OpenCV) and deep learning (MediaPipe).
 
 📄 *Source Code:* [AI-Hand-Tracking Repo](https://github.com/duongkhanhson/duongkhanhson.github.io/tree/master/AI-Hand-Tracking)
 
 ---
 
-## [4. Snake Math Game - Multiplication Training](https://github.com/duongkhanhson/duongkhanhson.github.io/tree/master/Snake-Math-Game)
+## [5. Snake Math Game - Multiplication Training](https://github.com/duongkhanhson/duongkhanhson.github.io/tree/master/Snake-Math-Game)
 **Technologies:** HTML5 Canvas, CSS3, Vanilla JavaScript
 
-An interactive browser game that helps primary school students practice multiplication tables by combining classic Snake mechanics with quick math solving.
-
-- **Stimulate Reflexive Thinking:** Instead of regular food, the snake must find and eat the "correct result" of a multiplication problem randomly displayed on the screen.
-- **No External Libraries:** The entire Game Loop engine and Canvas graphic rendering were developed using pure Vanilla JavaScript logic.
-- **Instant Web Experience:** Play immediately in your browser with no installation required.
+Combines classic Snake mechanics with quick math solving to help primary school students practice multiplication tables.
 
 🎮 *Live Demo:* **[Play Now](https://duongkhanhson.github.io/Snake-Math-Game/)**  
 📄 *Source Code:* [Snake-Math-Game Repo](https://github.com/duongkhanhson/duongkhanhson.github.io/tree/master/Snake-Math-Game)
-
----
-
-## [5. ESP32 Camera Network & Face Tracking](https://github.com/duongkhanhson/duongkhanhson.github.io/tree/master/ESP32-Cam-Face-Tracking)
-**Technologies:** Python, OpenCV, ESP32-CAM, Tkinter
-
-Integrates ESP32-CAM hardware with a Python workstation for wireless face detection and tracking via TCP/IP Streaming.
-
-📄 *Details:* [ESP32-Cam-Face-Tracking Repo](https://github.com/duongkhanhson/duongkhanhson.github.io/tree/master/ESP32-Cam-Face-Tracking)
-
----
-
-## [6. PID Motor Serial Control Interface](https://github.com/duongkhanhson/duongkhanhson.github.io/tree/master/PID-Motor-Control)
-**Technologies:** Python, Arduino C++, Control Theory
-
-A graphical interface for tuning PID control algorithms via Serial communication, designed for DC Motors with Encoders.
-
-📄 *Details:* [PID-Motor-Control Repo](https://github.com/duongkhanhson/duongkhanhson.github.io/tree/master/PID-Motor-Control)
 
 ---
 
