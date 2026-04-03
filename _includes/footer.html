@@ -24,4 +24,15 @@
 </div>
 {% endif %}
 
-<div class="page__footer-copyright">&copy; {% assign site_time = site.time | date: '%Y' %}{% if site.footer.since and site_time != site.footer.since %}{{ site.footer.since }} - {% endif %}{{ site_time }} <a href="{{ site.copyright_url | default: site.url }}">{{ site.copyright | default: site.title | escape_once | strip }}</a>. {{ site.data.ui-text[locale].powered_by | default: "Powered by" }} <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright" style="text-align:center; padding-bottom: 10px;">
+  <hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 1rem;">
+  <p style="font-size:0.8rem; color:#777; margin-bottom: 5px;"><strong>📊 Thống kê lượt truy cập / Visitor Statistics</strong></p>
+  <div style="display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin-bottom: 1rem;">
+    <a href="https://hits.dwyl.com/duongkhanhson/duongkhanhson.github.io">
+      <img src="https://hits.dwyl.com/duongkhanhson/duongkhanhson.github.io.svg" alt="Total Page Views">
+    </a>
+    <img src="https://komarev.com/ghpvc/?username=duongkhanhson&color=0066CC&style=flat&label=Profile+Views" alt="Profile Views">
+  </div>
+  &copy; {% assign site_time = site.time | date: '%Y' %}{% if site.footer.since and site_time != site.footer.since %}{{ site.footer.since }} - {% endif %}{{ site_time }} <a href="{{ site.copyright_url | default: site.url }}">{{ site.copyright | default: site.title | escape_once | strip }}</a>. {{ site.data.ui-text[locale].powered_by | default: "Powered by" }} <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.
+</div>
+
