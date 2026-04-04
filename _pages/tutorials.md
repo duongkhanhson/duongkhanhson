@@ -1,5 +1,5 @@
 ---
-title: "Hướng Dẫn & Knowledge (Tutorials)"
+title: "Hướng Dẫn & Knowledge (Tutorials) "
 permalink: /tutorials/
 layout: single
 author_profile: true
